@@ -2,20 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 
-export function SaiaDaMatrixLanding() {
-  return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32">
-        <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-wider">
-          SAIA DA
-          <span className="block text-green-400">MATRIX</span>
-        </h1>
-        <p className="text-xl text-zinc-300 max-w-2xl">Desperte para a realidade</p>
-      </section>
-    </div>
-  )
-}
-
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [entered, setEntered] = useState(false)
@@ -80,24 +66,32 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
+      {/* MATRIX */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 h-full w-full opacity-40"
       />
 
+      {/* OVERLAY */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.15),transparent_70%)]" />
 
+      {/* SCANLINES */}
       <div className="pointer-events-none absolute inset-0 opacity-20 mix-blend-soft-light">
         <div className="h-full w-full bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.35)_50%)] bg-[length:100%_4px]" />
       </div>
 
+      {/* INTRO */}
       <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <div className="absolute h-[450px] w-[450px] rounded-full bg-green-500/20 blur-3xl" />
 
         <div className="relative">
-          <p className="mb-6 animate-pulse tracking-[0.6em] text-green-500">SYSTEM ACTIVE</p>
+          <p className="mb-6 animate-pulse tracking-[0.6em] text-green-500">
+            SYSTEM ACTIVE
+          </p>
 
-          <h1 className="text-7xl font-black uppercase tracking-[0.2em] text-green-400 drop-shadow-[0_0_35px_rgba(34,197,94,1)] md:text-[10rem]">EXIT</h1>
+          <h1 className="text-7xl font-black uppercase tracking-[0.2em] text-green-400 drop-shadow-[0_0_35px_rgba(34,197,94,1)] md:text-[10rem]">
+            EXIT
+          </h1>
 
           <div className="mx-auto mt-10 h-[2px] w-40 bg-green-500 shadow-[0_0_20px_rgba(34,197,94,1)]" />
 
@@ -125,17 +119,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* LANDING */}
       {entered && (
         <>
-          <section id="ebook" className="relative z-10 px-6 py-32 md:px-20">
+          <section
+            id="ebook"
+            className="relative z-10 px-6 py-32 md:px-20"
+          >
             <div className="mx-auto max-w-7xl">
               <div className="grid items-center gap-20 md:grid-cols-2">
                 <div>
-                  <p className="mb-4 tracking-[0.4em] text-green-500">O MANIFESTO</p>
+                  <p className="mb-4 tracking-[0.4em] text-green-500">
+                    O MANIFESTO
+                  </p>
 
                   <h2 className="text-5xl font-black leading-tight md:text-7xl">
                     SAIA DA
-                    <span className="block text-green-400">MATRIX</span>
+                    <span className="block text-green-400">
+                      MATRIX
+                    </span>
                   </h2>
 
                   <p className="mt-8 text-lg leading-relaxed text-zinc-300">
@@ -167,16 +169,22 @@ export default function Home() {
                   <div className="relative rounded-[2.5rem] border border-green-400/30 bg-zinc-900/70 p-5 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,197,94,0.4)]">
                     <div className="flex h-[550px] w-[340px] flex-col justify-between rounded-[2rem] border border-zinc-800 bg-black p-8">
                       <div>
-                        <p className="mb-6 tracking-[0.4em] text-green-500">EBOOK</p>
+                        <p className="mb-6 tracking-[0.4em] text-green-500">
+                          EBOOK
+                        </p>
 
                         <h3 className="text-6xl font-black leading-none">
                           SAIA
-                          <span className="block text-green-400">DA</span>
+                          <span className="block text-green-400">
+                            DA
+                          </span>
                           MATRIX
                         </h3>
                       </div>
 
-                      <p className="text-zinc-500">O manifesto da liberdade mental.</p>
+                      <p className="text-zinc-500">
+                        O manifesto da liberdade mental.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -184,6 +192,7 @@ export default function Home() {
             </div>
           </section>
 
+          {/* FEATURES */}
           <section className="relative z-10 grid gap-8 px-6 py-24 md:grid-cols-3 md:px-20">
             {[
               {
@@ -203,26 +212,37 @@ export default function Home() {
                 key={item.title}
                 className="rounded-[2rem] border border-zinc-800 bg-zinc-900/60 p-10 backdrop-blur-xl transition hover:-translate-y-2 hover:border-green-400/40 hover:shadow-[0_0_40px_rgba(34,197,94,0.2)]"
               >
-                <h3 className="mb-6 text-3xl font-black text-green-400">{item.title}</h3>
+                <h3 className="mb-6 text-3xl font-black text-green-400">
+                  {item.title}
+                </h3>
 
-                <p className="leading-relaxed text-zinc-300">{item.text}</p>
+                <p className="leading-relaxed text-zinc-300">
+                  {item.text}
+                </p>
               </div>
             ))}
           </section>
 
+          {/* FINAL */}
           <section className="relative z-10 px-6 py-32 md:px-20">
             <div className="relative overflow-hidden rounded-[3rem] border border-green-400/20 bg-zinc-900/70 p-16 text-center backdrop-blur-2xl">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.12),transparent_70%)]" />
 
               <div className="relative">
-                <p className="mb-4 tracking-[0.5em] text-green-500">THE CHOICE IS YOURS</p>
+                <p className="mb-4 tracking-[0.5em] text-green-500">
+                  THE CHOICE IS YOURS
+                </p>
 
                 <h2 className="text-5xl font-black leading-tight md:text-7xl">
                   CONTINUAR
-                  <span className="block text-green-400">DORMINDO?</span>
+                  <span className="block text-green-400">
+                    DORMINDO?
+                  </span>
                 </h2>
 
-                <p className="mx-auto mt-10 max-w-3xl text-xl leading-relaxed text-zinc-300">Ou despertar para construir sua própria realidade.</p>
+                <p className="mx-auto mt-10 max-w-3xl text-xl leading-relaxed text-zinc-300">
+                  Ou despertar para construir sua própria realidade.
+                </p>
 
                 <a
                   href="https://pay.kiwify.com.br/SEULINK"
@@ -237,11 +257,10 @@ export default function Home() {
         </>
       )}
 
-      <footer className="relative z-10 border-t border-zinc-900 py-10 text-center text-zinc-500">© 2026 — EXIT MATRIX</footer>
-
-      <audio autoPlay loop>
-        <source src="https://files.catbox.moe/8b5n5v.mp3" type="audio/mpeg" />
-      </audio>
+      {/* FOOTER */}
+      <footer className="relative z-10 border-t border-zinc-900 py-10 text-center text-zinc-500">
+        © 2026 — EXIT MATRIX
+      </footer>
     </main>
   )
 }
